@@ -1,9 +1,10 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-// Switch allows you to have multiple routes.
+
 import { Layout, Typography, Space } from 'antd';
 import { Navbar, Exchanges, Home, Cryptocurrencies, CryptoDetails, News } from './components';
 const { Title } = Typography;
+
 const App = () => {
   return (
     <div className='app'>
@@ -14,21 +15,11 @@ const App = () => {
         <Layout>
           <div className='routes'>
             <Routes>
-              <Route exact path='/'>
-                <Home />
-              </Route>
-              <Route exact path='/exchanges'>
-                <Exchanges />
-              </Route>
-              <Route exact path='/cryptocurrencies'>
-                <Cryptocurrencies />
-              </Route>
-              <Route exact path='/crypto/:coinID'>
-                <CryptoDetails />
-              </Route>
-              <Route exact path='/news'>
-                <News />
-              </Route>
+              <Route exact path='/' element={<Home />} />
+              <Route exact path='/exchanges' element={<Exchanges />} />
+              <Route exact path='/cryptocurrencies' element={<Cryptocurrencies />} />
+              <Route exact path='/crypto/:coinID' element={<CryptoDetails />} />
+              <Route exact path='/news' element={<News />} />
             </Routes>
           </div>
         </Layout>
